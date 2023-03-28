@@ -5,3 +5,7 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 
 - CRUD de níveis
 - CRUD dos desenvolvedores
+
+#
+
+### FASE 1: Escolher a linguagem para trabalhar -> Provavelmente Laravel
