@@ -23,5 +23,6 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 ### FASE 3: Ver o que precisa ser feito para chegar nesse resultado: 
 
 :white_check_mark: Como rodar Laravel em Docker, pois até agora só vimos em Xampp; <br />
-:black_square_button: Como configurar o Laravel para ser uma SPA; <br />
-:black_square_button: Como fazer os Crud's se interligarem através de uma FK.
+:white_check_mark: Como configurar o Laravel para ser uma SPA; <br />
+:black_square_button: Como fazer os Crud's se interligarem através de uma FK; <br />
+:black_square_button: O que devo fazer primeiro: criar o projeto com o docker, criar com o livewire instalado ou fazer isso depois em um prjeto já existente?
