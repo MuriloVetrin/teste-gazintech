@@ -6,23 +6,27 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 - CRUD de níveis
 - CRUD dos desenvolvedores
 
-#
+# Fases do Desenvolvimento:
 
-### FASE 1: Escolher a linguagem para trabalhar: 
+### FASE 1 -> Escolher a linguagem para trabalhar: 
 -> Laravel
-#
 
-### FASE 2: Esboçar o projeto e como provavelmente ele deve ficar: 
+### FASE 2 -> Esboçar o projeto e como provavelmente ele deve ficar: 
 
 -> Protótipo
 
 ![protótipo](https://user-images.githubusercontent.com/93444811/228835051-ce6d5a2f-829e-494d-8370-23777c15c379.jpeg)
 
-#
-
-### FASE 3: Ver o que precisa ser feito para chegar nesse resultado: 
+### FASE 3 -> Ver o que precisa ser feito para chegar nesse resultado: 
 
 :white_check_mark: Como rodar Laravel em Docker, pois até agora só vimos em Xampp; <br />
 :white_check_mark: Como configurar o Laravel para ser uma SPA; <br />
 :white_check_mark: Como fazer os Crud's se interligarem através de uma FK; <br />
 :white_check_mark: O que devo fazer primeiro: criar o projeto com o docker, criar com o livewire instalado ou fazer isso depois em um prjeto já existente?
+
+### FASE 4 -> Desenvolvimento:
+
+:white_check_mark: Montar os Models e consecutivamente as Migrations, junto com o banco de dados e as tabelas; <br />
+:black_square_button: Criar as Controllers junto com as rotas; <br />
+:black_square_button: Configurar para ser uma SPA; <br />
+:black_square_button: Configurar para rodar em Docker. 
