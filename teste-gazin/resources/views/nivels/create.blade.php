@@ -4,7 +4,7 @@
 
     <h1>Novo Nível</h1>
 
-    <form action="{{ route('nivel.store') }}" method="POST">
+    <form action="{{ route('nivels.store') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>

@@ -10,22 +10,22 @@
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
             <th scope="col">Nível</th>
-            <th scope="col">Ações</th>
+            <th scope="col">Editar</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($devs as $dev)
+        @foreach($desenvolvedors as $desenvolvedor)
         <tr>
-            <th scope="row">{{$dev->id}}</th>
+            <th scope="row">{{$desenvolvedor->id}}</th>
             <th scope="row">
-                <a href="{{route('desenvolvedor.show', $dev)}}">{{$dev->nome}}</a>
+                <a href="{{route('desenvolvedors.show', $desenvolvedor)}}">{{$desenvolvedor->nome}}</a>
             </th>
-            <th scope="row">{{$dev->email}}</th>
+            <th scope="row">{{$desenvolvedor->email}}</th>
             <th>
             
-                <a class="btn btn-primary" href="{{route('desenvolvedor.edit', $dev)}}">Editar</a>
+                <a class="btn btn-primary" href="{{route('desenvolvedors.edit', $desenvolvedor)}}">Editar</a>
 
-            <form action="{{route('desenvolvedor.destroy', $dev)}}"
+            <form action="{{route('desenvolvedors.destroy', $desenvolvedor)}}"
             method="POST"
             >
             @method('DELETE')
@@ -49,7 +49,7 @@
         @endforeach
     </tbody>
 </table>
-<a class="btn btn-success" href="{{ route('desenvolvedor.create') }}">Novo Desenvolvedor</a>
-<a class="btn btn-primary" href="{{ route('nivel.index') }}">Gerenciar Níveis</a>
+<a class="btn btn-success" href="{{ route('desenvolvedors.create') }}">Novo Desenvolvedor</a>
+<a class="btn btn-primary" href="{{ route('nivels.index') }}">Gerenciar Níveis</a>
 
 @endsection

@@ -14,5 +14,5 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: gazinteste
+      MYSQL_DATABASE: gazincrud
       MYSQL_ROOT_PASSWORD: root

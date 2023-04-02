@@ -15,20 +15,23 @@ use App\Http\Controllers\NivelController;
 |
 */
 
-Route::get('/', [DesenvolvedorController::class, 'index'])->name('desenvolvedor.index');
-Route::get('/create', [DesenvolvedorController::class, 'create'])->name('desenvolvedor.create');
-Route::get('/{id}', [DesenvolvedorController::class, 'show'])->name('desenvolvedor.show');
-Route::get('/{id}/edit', [DesenvolvedorController::class, 'edit'])->name('desenvolvedor.edit');
+Route::get('/desenvolvedores/{id}', [DesenvolvedorController::class, 'show'])->where('id', '[0-9]+');
 
-Route::post('/', [DesenvolvedorController::class, 'store'])->name('desenvolvedor.store');
-Route::put('/{id}', [DesenvolvedorController::class, 'update'])->name('desenvolvedor.update');
-Route::delete('/{id}', [DesenvolvedorController::class, 'destroy'])->name('desenvolvedor.destroy');
+Route::get('/', [DesenvolvedorController::class, 'index'])->name('desenvolvedors.index');
+Route::get('/create', [DesenvolvedorController::class, 'create'])->name('desenvolvedors.create');
+Route::get('/{id}/edit', [DesenvolvedorController::class, 'edit'])->name('desenvolvedors.edit');
 
-Route::get('/nivel', [NivelController::class, 'index'])->name('nivel.index');
-Route::get('/nivel/create', [NivelController::class, 'create'])->name('nivel.create');
-Route::get('/nivel/{id}', [NivelController::class, 'show'])->name('nivel.show');
-Route::get('/nivel/{id}/edit', [NivelController::class, 'edit'])->name('nivel.edit');
+Route::post('/', [DesenvolvedorController::class, 'store'])->name('desenvolvedors.store');
+Route::put('/{id}', [DesenvolvedorController::class, 'update'])->name('desenvolvedors.update');
+Route::delete('/{id}', [DesenvolvedorController::class, 'destroy'])->name('desenvolvedors.destroy');
 
-Route::post('/nivel', [NivelController::class, 'store'])->name('nivel.store');
-Route::put('/nivel/{id}', [NivelController::class, 'update'])->name('nivel.update');
-Route::delete('/nivel/{id}', [NivelController::class, 'destroy'])->name('nivel.destroy');
+Route::get('/nivels', [NivelController::class, 'index'])->name('nivels.index');
+Route::get('/nivels/create', [NivelController::class, 'create'])->name('nivels.create');
+Route::get('/nivels/{id}', [NivelController::class, 'show'])->name('nivels.show');
+Route::get('/nivels/{id}/edit', [NivelController::class, 'edit'])->name('nivels.edit');
+
+Route::post('/nivels', [NivelController::class, 'store'])->name('nivels.store');
+Route::put('/nivels/{id}', [NivelController::class, 'update'])->name('nivels.update');
+Route::delete('/nivels/{id}', [NivelController::class, 'destroy'])->name('nivels.destroy');
+
+Route::get('/{id}', [DesenvolvedorController::class, 'show'])->name('desenvolvedors.show');

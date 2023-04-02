@@ -2,7 +2,7 @@
 @section('title', 'Editar Desenvolvedor')
 
 @section('content')
-    <form action="{{ route('desenvolvedores.update', $desenvolvedor) }}" method="POST">
+    <form action="{{ route('desenvolvedors.update', $desenvolvedor) }}" method="POST">
          @method('PUT')
         @csrf
         <div class="mb-3">

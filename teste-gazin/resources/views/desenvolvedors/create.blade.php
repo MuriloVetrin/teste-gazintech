@@ -4,7 +4,7 @@
 
     <h1>Novo Desenvolvedor</h1>
 
-    <form action="{{ route('desenvolvedor.store') }}" method="POST">
+    <form action="{{ route('desenvolvedors.store') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
@@ -19,7 +19,7 @@
             <select name="nivel_id" id="nivel_id" class="form-control" required>
                     <option value="">Selecione o nível</option>
 
-                @foreach($niveis as $nivel)
+                @foreach($nivels as $nivel)
 
                     <option value="{{ $nivel->id }}">{{ $nivel->nome }}</option>
                 @endforeach

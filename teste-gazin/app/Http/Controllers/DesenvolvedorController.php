@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Desenvolvedor;
+use App\Models\Nivel;
 use Illuminate\Http\Request;
 
 class DesenvolvedorController extends Controller
@@ -10,36 +11,35 @@ class DesenvolvedorController extends Controller
     public function index()
     {
 
-        $desenvolvedor = Desenvolvedor::get();
+        $desenvolvedors = Desenvolvedor::get();
 
-        return view('desenvolvedor.index', ['devs ' => $desenvolvedor ]);
+        return view('desenvolvedors.index', ['desenvolvedors' => $desenvolvedors]);
     }
 
     public function show(int $id)
     {
-
-        $desenvolvedor  = Desenvolvedor::find($id);
-        return view('desenvolvedor.show', [
-            'devs ' => $desenvolvedor
-        ]);
+        $desenvolvedor  = Desenvolvedor::find(intval($id));
+        return view('desenvolvedors.show', ['desenvolvedor' => $desenvolvedor]);
     }
 
     public function create()
     {
-        return view('desenvolvedor.create');
+        $nivel = Nivel::all();
+        return view('desenvolvedors.create', compact('nivel'));
+       // return view('desenvolvedors.create');
     }
 
     public function store(Request $req)
     {
         $dados = $req->except('_token'); 
         Desenvolvedor::create($dados);
-        return redirect('/home');
+        return redirect('/desenvolvedors');
     }
 
     public function edit(int $id) 
     {
         $desenvolvedor = Desenvolvedor::find($id);
-        return view('desenvolvedor.edit', ['devs' => $desenvolvedor]);
+        return view('desenvolvedors.edit', ['desenvolvedor' => $desenvolvedor]);
     }
 
     public function update(int $id, Request $req)  
@@ -50,13 +50,13 @@ class DesenvolvedorController extends Controller
             'email' => $req->email,
             'nivel_id' => $req->nivel_id
         ]);
-        return redirect('/home');
+        return redirect('/desenvolvedors');
     }
 
     public function destroy(int $id)  
     {
        $desenvolvedor = Desenvolvedor::find($id);
        $desenvolvedor->delete();
-       return redirect('/home');
+       return redirect('/desenvolvedors');
     }
 }

@@ -11,35 +11,32 @@ class NivelController extends Controller
     {
 
         $nivels = Nivel::get();
-
-        return view('nivel.index', ['nivel' => $nivels]);
+        return view('nivels.index', ['nivels' => $nivels]);
     }
 
     public function show(int $id)
     {
 
         $nivel = Nivel::find($id);
-        return view('nivel.show', [
-            'nivel' => $nivel
-        ]);
+        return view('nivels.show', ['nivel' => $nivel]);
     }
 
     public function create()
     {
-        return view('nivel.create');
+        return view('nivels.create');
     }
 
     public function store(Request $req)
     {
         $dados = $req->except('_token'); 
         Nivel::create($dados);
-        return redirect('/home');
+        return redirect('/nivels');
     }
 
     public function edit(int $id) 
     {
         $nivel = Nivel::find($id);
-        return view('nivel.edit', ['nivel' => $nivel]);
+        return view('nivels.edit', ['nivel' => $nivel]);
     }
 
     public function update(int $id, Request $req)  
@@ -48,13 +45,13 @@ class NivelController extends Controller
         $nivel->update([
             'nome' => $req->nome
         ]);
-        return redirect('/home');
+        return redirect('/nivels');
     }
 
     public function destroy(int $id)  
     {
        $nivel = Nivel::find($id);
        $nivel->delete();
-       return redirect('/home');
+       return redirect('/nivels');
     }
 }

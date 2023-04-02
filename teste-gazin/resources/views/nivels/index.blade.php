@@ -8,19 +8,20 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
+            <th scope="col">Editar</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($nivel as $nivel)
+        @foreach($nivels as $nivel)
         <tr>
             <th scope="row">{{$nivel->id}}</th>
             <th scope="row">
-                <a href="{{route('nivel.show', $nivel)}}">{{$nivel->nome}}</a>
+                <a href="{{route('nivels.show', $nivel)}}">{{$nivel->nome}}</a>
             </th>
             
-                <a class="btn btn-primary" href="{{route('nivel.edit', $nivel)}}">Editar</a>
+                <a class="btn btn-primary" href="{{route('nivels.edit', $nivel)}}">Editar</a>
 
-            <form action="{{route('nivel.destroy', $nivel)}}"
+            <form action="{{route('nivels.destroy', $nivel)}}"
             method="POST"
             >
             @method('DELETE')
@@ -44,5 +45,7 @@
         @endforeach
     </tbody>
 </table>
-<a class="btn btn-success" href="{{ route('nivel.create') }}">Novo nivel</a>
+<a class="btn btn-success" href="{{ route('nivels.create') }}">Novo nivel</a>
+<a class="btn btn-secondary" href="{{ route('desenvolvedors.index') }}">Voltar para Lista de Desenvolvedores</a>
+
 @endsection
