@@ -30,3 +30,10 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 :white_check_mark: Criar as Controllers junto com as rotas; <br />
 :black_square_button: Configurar para ser uma SPA; <br />
 :white_check_mark: Configurar para rodar em Docker. 
+
+### Coisas para arrumar: 
+
+- Erro 'Undefined variable $nivels' no novo desenvolvedor;
+- Ajustar botão Editar e Apagar para ficar e baixo do tópico Editar no Crud de Nível;
+- Ajustar para ser uma SPA;
+- Colocar um botão de voltar para o Crud Desenvolvedor.
