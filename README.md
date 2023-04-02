@@ -36,4 +36,3 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 - Erro 'Undefined variable $nivels' no novo desenvolvedor;
 - Ajustar botão Editar e Apagar para ficar e baixo do tópico Editar no Crud de Nível;
 - Ajustar para ser uma SPA;
-- Colocar um botão de voltar para o Crud Desenvolvedor.
