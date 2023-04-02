@@ -27,6 +27,6 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 ### FASE 4 -> Desenvolvimento:
 
 :white_check_mark: Montar os Models e consecutivamente as Migrations, junto com o banco de dados e as tabelas; <br />
-:black_square_button: Criar as Controllers junto com as rotas; <br />
+:white_check_mark: Criar as Controllers junto com as rotas; <br />
 :black_square_button: Configurar para ser uma SPA; <br />
-:black_square_button: Configurar para rodar em Docker. 
+:white_check_mark: Configurar para rodar em Docker. 
