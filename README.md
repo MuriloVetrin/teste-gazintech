@@ -33,6 +33,13 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 
 ### Coisas para arrumar: 
 
-- Erro 'Undefined variable $nivels' no novo desenvolvedor;
-- Ajustar botão Editar e Apagar para ficar e baixo do tópico Editar no Crud de Nível;
+## 02/04
+
 - Ajustar para ser uma SPA;
+- Colocar para não poder apagar um nivel pois está atrelado a um desenvolvedor.
+
+Provavelmente esses erros se originam desse erro -> Ao clicar no botão enviar do forulario novo desenvolvedor ele da erro
+- Não aparece o nível dele na lista do crud;
+- Erro ao clicar no botão enviar do editar desenvolvedor;
+- Erro ao clicar no botão apagar desenvolvedor;
+- Ao clicar no usuario da lista da esse erro: Undefined constant "id";
