@@ -36,5 +36,5 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 ## 04/04
 
 - Ajustar para ser uma SPA;
-- Colocar para não poder apagar um nivel pois está atrelado a um desenvolvedor.
-- Não aparece o nível dele na lista do crud;
+- Colocar para não poder apagar um nivel pois está atrelado a um desenvolvedor;
+- Não aparece o nível dele na lista do crud.
