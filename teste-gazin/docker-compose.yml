@@ -1,18 +1,27 @@
-version: '3'
+version: "3"
 
 services:
-  web:
-    build: .
+  app:
+    image: laravel-www
+    container_name: teste_gazin
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
     ports:
-      - "8080:80"
+      - 8080:80
     volumes:
       - .:/var/www/html
-    depends_on:
-      - db
+
   db:
     image: mysql:5.7
+    container_name: teste_gazin_db
+    restart: always
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: gazincrud
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MYSQL_DATABASE: 'teste_gazin'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'pass'
+    volumes:
+      - .:/var/lib/mysql

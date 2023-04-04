@@ -21,7 +21,8 @@
 
                 @foreach($nivels as $nivel)
 
-                    <option value="{{ $nivel->id }}">{{ $nivel->nome }}</option>
+                    <option value="{{ $nivel->nome }}">{{ $nivel->nome }}</option>
+                 
                 @endforeach
             </select>
         </div>

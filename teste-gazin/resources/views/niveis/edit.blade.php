@@ -2,7 +2,7 @@
 @section('title', 'Editar Nível')
 
 @section('content')
-    <form action="{{ route('nivels.update', $nivel) }}" method="POST">
+    <form action="{{ route('niveis.update', $nivel) }}" method="POST">
          @method('PUT')
         @csrf
         <div class="mb-3">

@@ -50,6 +50,6 @@
     </tbody>
 </table>
 <a class="btn btn-success" href="{{ route('desenvolvedors.create') }}">Novo Desenvolvedor</a>
-<a class="btn btn-primary" href="{{ route('nivels.index') }}">Gerenciar Níveis</a>
+<a class="btn btn-primary" href="{{ route('niveis.index') }}">Gerenciar Níveis</a>
 
 @endsection

@@ -12,51 +12,58 @@ class DesenvolvedorController extends Controller
     {
 
         $desenvolvedors = Desenvolvedor::get();
-
         return view('desenvolvedors.index', ['desenvolvedors' => $desenvolvedors]);
     }
 
     public function show(int $id)
     {
-        $desenvolvedor  = Desenvolvedor::find(intval($id));
+
+        $desenvolvedor = Desenvolvedor::find($id);
+        $nivel = Nivel::find($desenvolvedor->nivel_id);
+        $desenvolvedor['nivel'] = $nivel->nome;
         return view('desenvolvedors.show', ['desenvolvedor' => $desenvolvedor]);
     }
 
     public function create()
     {
-        $nivel = Nivel::all();
-        return view('desenvolvedors.create', compact('nivel'));
-       // return view('desenvolvedors.create');
+        $nivels = Nivel::all();
+        return view('desenvolvedors.create', compact('nivels'));
     }
 
     public function store(Request $req)
     {
-        $dados = $req->except('_token'); 
+        $nivel = Nivel::where('nome', $req->nivel_id)->first();
+        $dados['nivel_id'] = $nivel->id;
+        $dados['nome'] = $req->nome;
+        $dados['email'] = $req->email;
+        
         Desenvolvedor::create($dados);
-        return redirect('/desenvolvedors');
+        return redirect('/desenvolvedor');
     }
 
-    public function edit(int $id) 
+    public function edit(int $id)
     {
         $desenvolvedor = Desenvolvedor::find($id);
-        return view('desenvolvedors.edit', ['desenvolvedor' => $desenvolvedor]);
+        $nivels = Nivel::all();
+        return view('desenvolvedors.edit',  compact('nivels'), ['desenvolvedor' => $desenvolvedor]);
     }
 
-    public function update(int $id, Request $req)  
+    public function update(int $id, Request $req)
     {
         $desenvolvedor = Desenvolvedor::find($id);
+
         $desenvolvedor->update([
             'nome' => $req->nome,
             'email' => $req->email,
             'nivel_id' => $req->nivel_id
         ]);
-        return redirect('/desenvolvedors');
+        return redirect('/desenvolvedor');
     }
 
-    public function destroy(int $id)  
+    public function destroy(int $id)
     {
-       $desenvolvedor = Desenvolvedor::find($id);
-       $desenvolvedor->delete();
-       return redirect('/desenvolvedors');
+        $desenvolvedor = Desenvolvedor::find($id);
+        $desenvolvedor->delete();
+        return redirect('/desenvolvedor');
     }
 }

@@ -15,10 +15,14 @@
             <input type="text" name="email" id="email" placeholder="Digite seu email"
                 value="{{ $desenvolvedor->email }}" class="form-control" required>
         </div>
-        <div class="mb-3">
+          <div class="mb-3">
             <label for="nivel_id" class="form-label">Nível</label>
-            <textarea name="nivel_id" id="nivel_id" placeholder="Digite seu nivel" cols="30" rows="10"
-                class="form-control" required>{{ $desenvolvedor->nivel }}</textarea>
+            <select name="nivel_id" id="nivel_id" class="form-control" value="{{ $desenvolvedor->nivel_id }}" required>
+                    <option value="">Selecione o nível</option>
+                @foreach($nivels as $nivel)
+                    <option value="{{ $nivel->id }}">{{ $nivel->nome }}</option>
+                @endforeach
+            </select>
         </div>
         <button class="btn btn-success w-100" type="submit">Enviar</button>
     </form>

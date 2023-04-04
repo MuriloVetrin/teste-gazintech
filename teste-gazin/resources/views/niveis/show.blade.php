@@ -11,7 +11,7 @@
         <p class="card-text"><strong>ID: </strong>{{$nivel->id}}</p>
         <p class="card-text"><strong>Nome: </strong>{{$nivel->nome}}</p>
         <br>
-        <a href="{{route('nivels.index')}}" class="btn btn-success">Voltar á lista de niveis</a>
+        <a href="{{route('niveis.index')}}" class="btn btn-success">Voltar á lista de niveis</a>
     </div>
 </div>
 
