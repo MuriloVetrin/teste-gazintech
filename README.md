@@ -35,6 +35,5 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 
 ## 05/04
 
-- Configurar para só colocar email valido;
 - Ajustar para ser uma SPA;
 - Colocar para não poder apagar um nivel pois está atrelado a um desenvolvedor.
