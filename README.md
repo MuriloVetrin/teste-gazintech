@@ -33,8 +33,9 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 
 ### Coisas para arrumar: 
 
-## 04/04
+## 05/04
 
+- Configurar para só colocar email valido;
 - Ajustar para ser uma SPA;
-- Não aparece o nível dele na lista do crud;
 - Colocar para não poder apagar um nivel pois está atrelado a um desenvolvedor.
+
