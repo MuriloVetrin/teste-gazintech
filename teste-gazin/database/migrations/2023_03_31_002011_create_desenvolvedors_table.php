@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('desenvolvedors', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('email');
+            $table->string('email')->unique()->validate('email');
             $table->unsignedBigInteger('nivel_id');
             $table->foreign('nivel_id')->references('id')->on('nivels')->onDelete('cascade');
             $table->timestamps();

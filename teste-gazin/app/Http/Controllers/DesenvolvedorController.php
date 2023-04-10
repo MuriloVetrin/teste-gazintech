@@ -11,7 +11,7 @@ class DesenvolvedorController extends Controller
     public function index()
     {
 
-        $desenvolvedors = Desenvolvedor::get();
+        $desenvolvedors = Desenvolvedor::paginate(3);
         return view('desenvolvedors.index', ['desenvolvedors' => $desenvolvedors]);
     }
 
@@ -32,6 +32,13 @@ class DesenvolvedorController extends Controller
 
     public function store(Request $req)
     {
+        $validatedData = $req->validate([
+            'email' => 'required|email',
+        ], [
+            'email.required' => 'O e-mail é obrigatório',
+            'email.email' => 'Por favor, coloque um e-mail válido',
+        ]);
+
         $nivel = Nivel::where('nome', $req->nivel_id)->first();
         $dados['nivel_id'] = $nivel->id;
         $dados['nome'] = $req->nome;
@@ -52,9 +59,14 @@ class DesenvolvedorController extends Controller
     {
         $desenvolvedor = Desenvolvedor::find($id);
 
+        $validatedData = $req->validate([
+            'email' => 'required|email',
+        ]);
+
         $desenvolvedor->update([
+
             'nome' => $req->nome,
-            'email' => $req->email,
+            'email' => $validatedData['email'],
             'nivel_id' => $req->nivel_id
         ]);
         return redirect('/desenvolvedor');

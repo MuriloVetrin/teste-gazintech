@@ -11,7 +11,8 @@
             <input type="text" name="nome" id="nome" placeholder="Digite o nome" class="form-control" required>
         </div>
        
-        <button class="btn btn-success w-100" type="submit">Enviar</button>
+        <button class="btn btn-success mb-3" type="submit">Enviar</button>
+        <a class="btn btn-secondary mb-3" href="{{ route('niveis.index') }}">Voltar para lista de níveis</a>
     </form>
 
 @endsection

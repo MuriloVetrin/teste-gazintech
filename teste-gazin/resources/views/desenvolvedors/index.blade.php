@@ -21,6 +21,7 @@
                 <a href="{{route('desenvolvedors.show', $desenvolvedor)}}">{{$desenvolvedor->nome}}</a>
             </th>
             <th scope="row">{{$desenvolvedor->email}}</th>
+            <th scope="row">{{$desenvolvedor->nivel_nome}}</th>
             <th>
             
                 <a class="btn btn-primary" href="{{route('desenvolvedors.edit', $desenvolvedor)}}">Editar</a>
@@ -48,7 +49,10 @@
 
         @endforeach
     </tbody>
+    
 </table>
+
+{{ $desenvolvedors->onEachSide(5)->links('pagination::bootstrap-4') }}
 <a class="btn btn-success" href="{{ route('desenvolvedors.create') }}">Novo Desenvolvedor</a>
 <a class="btn btn-primary" href="{{ route('niveis.index') }}">Gerenciar Níveis</a>
 

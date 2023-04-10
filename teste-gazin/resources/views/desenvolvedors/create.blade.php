@@ -13,6 +13,9 @@
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="text" name="email" id="email" placeholder="Digite seu email" class="form-control" required>
+            @if ($errors->has('email'))
+                <span class="text-danger">{{ $errors->first('email') }}</span>
+            @endif
         </div>
         <div class="mb-3">
             <label for="nivel_id" class="form-label">Nível</label>
@@ -27,7 +30,7 @@
             </select>
         </div>
 
-        <button class="btn btn-success w-100" type="submit">Enviar</button>
-    </form>
-
+        <button class="btn btn-success mb-3" type="submit">Enviar</button>
+    <a class="btn btn-secondary mb-3" href="{{ route('desenvolvedors.index') }}">Voltar para lista de desenvolvedores</a>
+  </form>
 @endsection

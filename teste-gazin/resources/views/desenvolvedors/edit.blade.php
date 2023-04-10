@@ -1,7 +1,9 @@
 @extends('app')
 @section('title', 'Editar Desenvolvedor')
-
 @section('content')
+
+    <h1>Editar Desenvolvedor</h1>
+
     <form action="{{ route('desenvolvedors.update', $desenvolvedor) }}" method="POST">
          @method('PUT')
         @csrf
@@ -24,6 +26,7 @@
                 @endforeach
             </select>
         </div>
-        <button class="btn btn-success w-100" type="submit">Enviar</button>
+        <button class="btn btn-success mb-3" type="submit"> Enviar </button>
+        <a class="btn btn-secondary mb-3" href="{{ route('desenvolvedors.index') }}">Voltar para lista de desenvolvedores</a>
     </form>
 @endsection

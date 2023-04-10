@@ -36,3 +36,6 @@ Route::get('/nivel/{id}/edit', [NivelController::class, 'edit'])->name('niveis.e
 Route::post('/nivel', [NivelController::class, 'store'])->name('niveis.store');
 Route::put('/nivel/{id}', [NivelController::class, 'update'])->name('niveis.update');
 Route::delete('/nivel/{id}', [NivelController::class, 'destroy'])->name('niveis.destroy');
+
+//Sobre
+Route::get('/sobre', function () { return view('sobre'); });

@@ -13,7 +13,12 @@ class Desenvolvedor extends Model
 
     public function nivel()
     {
-        return $this->belongsTo(Niveis::class);
+        return $this->belongsTo(Nivel::class);
+    }
+     
+    public function getNivelNomeAttribute()
+    {
+        return $this->nivel->nome ?? '-';
     }
 
 
