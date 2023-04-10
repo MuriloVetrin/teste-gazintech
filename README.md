@@ -30,10 +30,3 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 :white_check_mark: Criar as Controllers junto com as rotas; <br />
 :black_square_button: Configurar para ser uma SPA; <br />
 :white_check_mark: Configurar para rodar em Docker. 
-
-### Coisas para arrumar: 
-
-## 05/04
-
-- Ajustar para ser uma SPA;
-- Colocar para não poder apagar um nivel pois está atrelado a um desenvolvedor.
