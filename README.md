@@ -54,7 +54,7 @@ Laravel:
    
    -> php artisan serve
    
-React
+React:
 
    -> npm install;
    
