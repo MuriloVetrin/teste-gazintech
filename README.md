@@ -3,8 +3,8 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 
 É preciso conter dois crud's:
 
-- CRUD de níveis
 - CRUD dos desenvolvedores
+- CRUD de níveis -> FK
 
 # Fases do Desenvolvimento:
 
