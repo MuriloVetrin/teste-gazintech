@@ -54,7 +54,7 @@ Laravel:
    
    -> php artisan serve
    
-- O React é preciso dois comandos:
+React
 
    -> npm install;
    
