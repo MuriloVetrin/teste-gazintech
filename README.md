@@ -45,7 +45,6 @@ Criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, 
 Laravel: 
 
 - ativar o xampp; 
-- Meu Docker está com um problema e hoje tenho aula com o professor de docker, não sei se tudo bem eu mandar ele com o docker arrumado 22:00;
 - digitar os seguintes comandos no terminal do projeto Laravel:
 
    -> composer;
@@ -53,6 +52,12 @@ Laravel:
    -> composer install;
    
    -> php artisan serve
+   
+Docker: 
+
+- use p projeto da pasta docker, ele continua dando um erro, mas creio que é na minha maquina, pois mostrei pro professor ele disse que estava correto o codigo e que depois iriamos ver como rodar no docker;
+- docker-compose up -d
+   
    
 - O React é preciso dois comandos:
 
