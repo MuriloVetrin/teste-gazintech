@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPA com Laravel e Vue.js</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Lista de Desenvolvedores</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="dev in devs" :key="dev.id">
+          <td>{{ dev.id }}</td>
+          <td>{{ dev.nome }}</td>
+          <td>{{ dev.email }}</td>
+          <td>
+            <button @click="editarDev(dev)">Editar</button>
+            <button @click="apagarDev(dev.id)">Apagar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button @click="mostrarFormulario = true">Novo Desenvolvedor</button>
+    <div v-if="mostrarFormulario">
+      <h2>Cadastrar Novo Desenvolvedor</h2>
+      <form @submit.prevent="salvarDev">
+        <input type="text" v-model="novoDev.nome" placeholder="Nome">
+        <input type="email" v-model="novoDev.email" placeholder="Email">
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        devs: [],
+        novoDev: {
+          nome: '',
+          email: ''
+        },
+        mostrarFormulario: false
+      },
+      methods: {
+        buscarDevs: function() {
+          axios.get('/api/desenvolvedores')
+            .then(response => {
+              this.devs = response.data;
+            })
+            .catch(error => {
+              console.log(error);
+            });
+        },
+        salvarDev: function() {
+
+            if (this.novoDev.id) {
+
+          axios.put('/api/desenvolvedores/' + this.novoDev.id, this.novoDev)
+      .then(response => {
+    
+        let index = this.devs.findIndex(dev => dev.id === this.novoDev.id);
+        this.$set(this.devs, index, response.data);
+
+        this.novoDev = {
+          id: '',
+          nome: '',
+          email: ''
+        };
+        this.mostrarFormulario = false;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  } else {
+
+    axios.post('/api/desenvolvedores', this.novoDev)
+      .then(response => {
+        this.devs.push(response.data);
+
+
+        this.novoDev = {
+          id: '',
+          nome: '',
+          email: ''
+        };
+        this.mostrarFormulario = false;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    }
+        },
+        editarDev: function(dev) {
+            this.mostrarFormulario = true;
+            this.novoDev = {
+            id: dev.id,
+            nome: dev.nome,
+            email: dev.email
+          };
+        },
+        apagarDev: function(id) {
+          axios.delete('/api/desenvolvedores/' + id)
+            .then(response => {
+              this.buscarDevs();
+              })
+              .catch(error => {
+                console.log(error);
+              });
+
+        }
+      },
+        mounted: function() {
+       this.buscarDevs();
+        }
+        });
+
+         </script>
+      </body>
+</html>
